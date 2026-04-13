@@ -1,0 +1,101 @@
+---
+// You can put component-specific logic here in the future if needed!
+---
+
+<nav id="main-nav" class="w-full bg-coast-beige sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative z-50 bg-coast-beige">
+      <a href="/" class="flex items-center gap-3 no-underline">
+        <img src="/assets/CoastQuest-Logo.svg" alt="Coast Quest" class="w-auto h-6" onerror="this.onerror=null; this.src='https://placehold.co/150x40/FBEED8/432D26?text=COAST+QUEST';" />
+      </a>
+      
+      <div class="hidden md:flex items-center gap-4">
+        <a href="/" class="text-mono-label text-xs border-2 border-coast-brown bg-coast-beige px-4 py-2 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">HOME</a>
+        <a href="/water-vibe" class="text-mono-label text-xs border-2 border-coast-brown bg-coast-beige px-4 py-2 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">WATER VIBE PLATFORM</a>
+        <a href="/about" class="text-mono-label text-xs border-2 border-coast-brown bg-coast-beige px-4 py-2 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">ABOUT</a>
+      </div>
+  
+      <button id="menu-btn" class="md:hidden border-2 border-coast-brown bg-coast-beige p-2 w-10 h-10 flex flex-col justify-center items-center transition-colors cursor-pointer">
+        <span id="line1" class="w-5 h-[2px] bg-coast-brown block transition-all duration-300 origin-center mb-1.5"></span>
+        <span id="line2" class="w-5 h-[2px] bg-coast-brown block transition-all duration-300 origin-center mb-1.5"></span>
+        <span id="line3" class="w-5 h-[2px] bg-coast-brown block transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
+  
+    <div id="mobile-backdrop" class="fixed inset-0 bg-coast-brown/30 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+  
+    <div id="mobile-drawer" class="fixed top-0 right-0 h-screen w-[85vw] max-w-sm bg-coast-beige border-l-2 border-coast-brown z-40 transform translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] md:hidden flex flex-col">
+      <div class="p-8 pt-24 flex-1 flex flex-col relative overflow-y-auto">
+
+        <div class="flex flex-col gap-6">
+          <a href="/" class="mobile-link font-heading text-3xl text-coast-brown no-underline transition-transform hover:translate-x-2">Home</a>
+          <a href="/water-vibe" class="mobile-link font-heading text-3xl text-coast-brown leading-tight no-underline transition-transform hover:translate-x-2">Water Vibe Platform</a>
+          <a href="/about" class="mobile-link font-heading text-3xl text-coast-brown no-underline transition-transform hover:translate-x-2">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+
+    // Wait for the DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+      let isMenuOpen = false;
+      
+      const menuBtn = document.getElementById('menu-btn');
+      const backdrop = document.getElementById('mobile-backdrop');
+      const drawer = document.getElementById('mobile-drawer');
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const line3 = document.getElementById('line3');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      const mainNav = document.getElementById('main-nav');
+  
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+  
+        if (isMenuOpen) {
+          // Show Drawer & Backdrop
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.classList.add('opacity-100', 'pointer-events-auto');
+  
+          drawer.classList.remove('translate-x-full');
+          drawer.classList.add('translate-x-0', 'shadow-[-12px_0_0_rgba(67,45,38,1)]'); 
+  
+          // Animate Hamburger to X
+          line1.classList.add('translate-y-[8px]', 'rotate-45');
+          line2.classList.add('opacity-0', 'translate-x-2');
+          line3.classList.add('-translate-y-[8px]', '-rotate-45');
+        } else {
+          // Hide Drawer & Backdrop
+          backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+  
+          drawer.classList.remove('translate-x-0', 'shadow-[-12px_0_0_rgba(67,45,38,1)]');
+          drawer.classList.add('translate-x-full');
+  
+          // Revert Hamburger
+          line1.classList.remove('translate-y-[8px]', 'rotate-45');
+          line2.classList.remove('opacity-0', 'translate-x-2');
+          line3.classList.remove('-translate-y-[8px]', '-rotate-45');
+        }
+      }
+  
+      // Attach Event Listeners
+      if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+      if (backdrop) backdrop.addEventListener('click', toggleMenu);
+      
+      // Close menu when a link is clicked
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+      });
+  
+      // Scroll state for the header border
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          mainNav.classList.add('border-b-2', 'border-coast-brown', 'shadow-sm');
+        } else {
+          mainNav.classList.remove('border-b-2', 'border-coast-brown', 'shadow-sm');
+        }
+      });
+    });
+  </script>

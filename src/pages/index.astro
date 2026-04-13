@@ -1,17 +1,338 @@
 ---
-
+import '../styles/global.css';
+import Header from '../components/header.astro';
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coast Quest — Explore. Understand. Protect.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600&family=Rethink+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body class="overflow-x-hidden bg-coast-beige">
+  <Header />
+ <!-- HERO SECTION -->
+  <!-- 1. Swapped 'items-center' for 'items-start' so it anchors to the top -->
+  <section id="hero" class="relative min-h-screen flex items-start bg-coast-beige overflow-hidden">
+    
+    <div class="absolute top-[70%] -left-[10%] w-[120%] h-[100%] bg-coast-blue -skew-y-3"></div>
+
+    <!-- 2. Replaced the flat pt-24 with pt-12 md:pt-24. 
+         This gives 3rem of space on mobile, and exactly 6rem on desktop, completely killing the dead space! -->
+    <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10 pt-12 md:pt-42 pb-48">
+      <div>
+        <h1 class="text-hero text-coast-brown mb-6">
+          Coastline<br/>adventure<br/>trails
+        </h1>
+        <p class="text-body-large text-coast-brown mb-8 max-w-lg leading-relaxed">
+          We turn complicated water data into playful adventure trails, helping families explore their local shorelines safely and curiously.
+        </p>
+        <a href="#why-we-exist" class="inline-flex flex-col items-start gap-1 no-underline text-coast-brown hover:text-coast-orange transition-colors">
+          <span class="font-sans text-lg font-medium tracking-tight">Scroll down to learn how we work ↓</span>
+        </a>
+      </div>
+      
+      <div class="flex justify-center items-center relative">
+        <img src="/public/assets/bird.png" alt="Bird" class="float-anim object-contain w-full max-w-lg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/transparent/432D26?text=Bird+Animation';" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY WE EXIST SECTION -->
+
+
+  <section id="why-we-exist" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-section-header text-coast-brown mb-6">
+          There is a gap between data and families
+        </h2>
+        <p class="text-body-large text-coast-brown mb-4">
+          Water quality reports are currently way too complicated. The data is hidden in complex government websites and written in scientific jargon that most people can't understand. Coast Quest translates that data into one simple message: <strong>is it a good day to swim or not?</strong>
+        </p>
+      </div>
+      
+      <div class="flex flex-col gap-4 w-full max-w-md mx-auto md:ml-auto">
+        <div class="text-mono-label text-sm opacity-60">RAW TABLE DATA:</div>
+
+        <!-- RAW TABLE DATA -->
+       
+        <div class="bg-coast-yellow p-6 border-2 border-coast-brown font-mono text-sm text-coast-brown leading-relaxed tracking-tight">
+          Enterococci: 142 CFU/100ml<br/>
+          Turbidity: 18.4 NTU<br/>
+          HAB Alert: Aphanizomenon detected<br/>
+          pH: 7.9 | Temp: 14.2°C<br/><br/>
+          Exceeds bathing water directive 2006/7/EC
+        </div>
+        
+        <div class="text-mono-label text-sm opacity-60 mt-4">OUR TRANSLATION:</div>
+
+        <!-- E-INK DISPLAY MOCKUP -->
+       
+        <div class="flex justify-center items-center">
+          <img src="/public/assets/e-ink-graphic.png" alt="E-ink Display" class="w-full object-contain" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE COAST QUEST EXPERIENCE SECTION -->
+
+  <section id="the-coast-quest-experience" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="mb-12 max-w-3xl">
+      <h2 class="text-section-header text-coast-brown mb-6">
+        The Coast Quest Experience
+      </h2>
+      <p class="text-body-large text-coast-brown">
+        Coast Quest isn't just an adventure. It is a multiple touchpoint service, designed for both target groups; children and guardians. It is a seamless loop of physical installations, eco-friendly technology, and hands-on rewards designed specifically for coastal environments.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+        <div class="h-48 bg-coast-blue">
+          <img src="/assets/clear-data-photo.png" alt="Clear data screens" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-1">
+          <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Clear data on eco-friendly screens.</h3>
+          <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+            We display real-time environmental updates in simple, family-friendly language so parents don't have to decode scientific jargon. Delivered on zero-glare E-ink screens, the information stays readable in bright sunlight without causing light pollution that disrupts local marine wildlife.
+          </p>
+        </div>
+      </div>
+      
+      <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+        <div class="h-48 bg-coast-green">
+          <img src="/assets/hands-on-stations.png" alt="Hands-on learning" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-1">
+          <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Hands-on learning stations.</h3>
+          <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+            Kids learn best by doing. Our interactive installations provide education about natural phenomena and encourages experimentation, which strengthens cognitive development and builds a deeper, tactile connection to the natural world.
+          </p>
+        </div>
+      </div>
+      
+      <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+        <div class="h-48 bg-coast-yellow">
+          <img src="/assets/spread.png" alt="Explorer's Journal" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-1">
+          <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">The Explorer’s Journal</h3>
+          <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+            A physical guidebook filled with drawing prompts and checklists that turns a normal beach walk into a treasure hunt. By rewarding curiosity, the journal encourages children to actively engage with their surroundings.
+          </p>
+        </div>
+      </div>
+      
+      <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+        <div class="h-48 bg-coast-magenta">
+          <img src="/assets/water-vibe.png" alt="Water Vibe Platform" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-5 flex-1">
+          <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Water Vibe Platform</h3>
+          <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+            A free live dashboard tool for parents. Check local beach germ levels, algae status, and water clarity right from your phone before you even pack the beach bag.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section> <section id="water-vibe-dashboard" class="w-full py-24 bg-coast-beige"> 
+    <div class="max-w-7xl mx-auto px-6"> 
+      
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        
+        <div>
+          <h2 class="text-section-header text-coast-brown mb-4">
+            Visiting the Beach?
+          </h2>
+          <p class="text-body-large text-coast-brown max-w-xl mb-8">
+            Live dashboard tool free to use for everyone. Get the latest information about beach water germ levels, algae status and acidity before you leave the house.
+          </p>
+          <a href="/water-vibe" class="btn btn-primary inline-block">
+            Go to Water Vibe Platform
+          </a>
+        </div>
+
+        <div class="flex justify-center items-center">
+          <img src="/public/assets/dashboard.png" alt="Water Vibe E-ink Display" class="w-full h-auto object-contain"/>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="crew" class="w-full py-24 bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <h2 class="text-section-header text-coast-brown mb-6">
+          Meet Our Mascots:
+        </h2>
+        <p class="text-body-large text-coast-brown mt-4 max-w-xl">
+          Every country has its own Coast Quest mascot, who acts as your guide, sharing fun facts and helping you explore safely.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="border-2 border-coast-brown bg-coast-beige transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+          <div class="h-48 flex items-center justify-center bg-coast-beige">
+            <img src="/public/assets/seal.png" alt="Seal" class="w-full h-full object-contain p-6" />
+         </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-heading text-xl text-coast-brown tracking-tight">Bob</span>
+              <span class="text-mono-label text-[10px] border-2 border-coast-brown px-2 py-1">Finland</span>
+            </div>
+            <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+              Playful and curious, Bob knows every rock and crevice along the Baltic shore. Ask her about the best spots to find sea glass!
+            </p>
+          </div>
+        </div>
+
+        <div class="border-2 border-coast-brown bg-coast-beige transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+          <div class="h-48 flex items-center justify-center bg-coast-beige">
+            <img src="/public/assets/puffin.png" alt="Puffin" class="w-full h-full object-contain p-6" />
+         </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-heading text-xl text-coast-brown tracking-tight">Puff</span>
+              <span class="text-mono-label text-[10px] border-2 border-coast-brown px-2 py-1">Ireland</span>
+            </div>
+            <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+              Bold and a little dramatic. Loves cliff-top viewpoints and can spot a fish gang from a mile away. He'll always tell you the weather forecast.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-2 border-coast-brown bg-coast-beige transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+          <div class="h-48 flex items-center justify-center bg-coast-beige">
+            <img src="/public/assets/otter.png" alt="Otter" class="w-full h-full object-contain p-6" />
+         </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-heading text-xl text-coast-brown tracking-tight">Ūdris</span>
+              <span class="text-mono-label text-[10px] border-2 border-coast-brown px-2 py-1">Latvia</span>
+            </div>
+            <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+              Ūdris is a master of rivers. He'll show you how to read tidal marks and identify which shells were left by the tide overnight.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-2 border-coast-brown bg-coast-beige transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+          <div class="h-48 flex items-center justify-center bg-coast-beige">
+            <img src="/public/assets/penguin.png" alt="Penguin" class="w-full h-full object-contain p-6" />
+         </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-heading text-xl text-coast-brown tracking-tight">Pisco</span>
+              <span class="text-mono-label text-[10px] border-2 border-coast-brown px-2 py-1">Chile</span>
+            </div>
+            <p class="font-sans text-sm text-coast-brown leading-normal tracking-tight">
+              Cool, calm and stylish, Pisco navigates cold currents like a pro. He knows every forest secret along the Pacific coast.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="journal" class="w-full py-24 bg-coast-yellow" style="clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin: 2rem 0">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center py-16">
+      <div>
+        <h2 class="text-section-header text-coast-brown mb-6">
+          The Explorer's Journal for Youngsters
+        </h2>
+        <p class="text-body-large text-coast-brown mb-4">
+          A physical journal that children take on their coastal adventure. Each chapter introduces a new topic—from tidal creatures to water quality—through drawing prompts, checklists, and open-ended discovery. The journal offers a lasting, meaningful relationship with nature and empowers youth to protect our ecosystems, which directly aligns with the key EU social, environmental, and governance goals.         
+        </p>
+        <p class="text-body-large text-coast-brown mb-8">
+          Complete the journal and send it in to earn an official <strong>Young Explorer Certificate</strong>—something worth framing!
+        </p>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start gap-3">
+            <span class="font-sans text-lg tracking-tight text-coast-brown">● Drawing &amp; observation prompts for the shoreline</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="font-sans text-lg tracking-tight text-coast-brown">● Fun facts delivered by the local mascot</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="font-sans text-lg tracking-tight text-coast-brown">● Creature identification checklists &amp; habitat maps</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="font-sans text-lg tracking-tight text-coast-brown">● Self learning and development</span>
+          </div>
+        </div>
+        <a href="/assets/Journal-print.pdf" download="journal-print.pdf" class="btn btn-primary">
+          Download printable PDF here
+        </a>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="w-72 h-96 border-2 border-coast-brown bg-white shadow-[8px_8px_0_#432D26] flex items-center justify-center -rotate-2">
+            <img src="/public/assets/journal.png" alt="Explorer Journal" class="w-full h-full object-cover" />        
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- WAITLIST -->
+
+  <section id="waitlist" class="w-full py-24 bg-coast-brown">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-coast-beige tracking-tight leading-tight mb-6">
+        Coast Quest is coming to a shore near you.
+      </h2>
+      <p class="text-body-large text-coast-blue mb-12">
+        We're currently developing in Helsinki. Sign up to be notified when we launch.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto mb-6" id="waitlist-form">
+        <input type="email" id="email-input" placeholder="ilovebeaches@email.com" class="flex-1 bg-[#2d1f1a] border-2 border-coast-beige text-coast-beige px-4 py-3 font-sans outline-none focus:border-coast-orange"/>
+        <button onclick="handleWaitlist()" class="btn btn-primary border-coast-beige">
+          Join the Waitlist
+        </button>
+      </div>
+      <div id="waitlist-success" class="hidden">
+        <div class="border-2 border-coast-green p-6 text-center">
+          <div class="font-heading text-3xl text-coast-green mb-2 tracking-tight">You're on the list! 🌊</div>
+          <p class="font-sans text-coast-blue">We'll be in touch when Coast Quest comes to your coast. Thank you for joining the quest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+
+
+  <footer class="w-full py-8 border-t-2 border-coast-brown bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center">
+      <p class="text-mono-label text-xs opacity-60 text-center">
+       BUILT WITH LOVE IN AALTO UNIVERSITY
+      </p>
+    </div>
+  </footer>
+
+  <script>
+
+    // Waitlist Form UI: Basic validation and success message display
+    function handleWaitlist() {
+      const email = document.getElementById('email-input').value;
+      if (!email || !email.includes('@')) {
+        document.getElementById('email-input').style.borderColor = '#C84C71';
+        return;
+      }
+      document.getElementById('waitlist-form').classList.add('hidden');
+      document.getElementById('waitlist-success').classList.remove('hidden');
+    }
+  </script>
+  </body>
 </html>

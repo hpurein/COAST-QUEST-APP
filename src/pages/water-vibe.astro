@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+import Header from '../components/header.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coast Quest — Explore. Understand. Protect.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600&family=Rethink+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+  <Header />
+
+  <!-- WATER VIBE SECTION -->
+
+  <section class="w-full min-h-screen py-24 bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <div class="lg:col-span-5 flex flex-col justify-between h-full">
+          <div>
+            <h1 class="font-heading text-[64px] leading-[1.1] text-coast-brown mb-12 tracking-tight">
+              Visiting the<br/>beach?
+            </h1>
+
+            <div class="relative w-full border-2 border-coast-brown bg-coast-yellow">
+              <select class="w-full bg-transparent text-coast-brown p-4 pr-10 font-sans font-medium outline-none appearance-none cursor-pointer rounded-none">
+                <option value="" disabled selected>Choose Location</option>
+                <option>Pihlajasaari Beach</option>
+                <option>Hietaniemi Hietsu Beach, Helsinki</option>
+                <option>Yyteri Beach, Helsinki</option>
+                <option>Aurinkolahti Beach, Helsinki</option>
+                <option>Nallikari Beach, Oulu</option>
+                <option>Plagen Beach, Hanko</option>
+                <option>Kalajoki Sand Dunes, Kalajoki</option>
+              </select>
+              <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 6L11 1" stroke="#432D26" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-sans text-xs text-coast-brown mt-12 lg:mt-32 opacity-80">
+            Weekly sourced data from EU Earth Observation Programme “Copernicus”
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 border-t-2 border-l-2 border-coast-brown">
+            
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Health:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">great</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/public/assets/platform/icons/icon-eyes.png" alt="Eyes" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Bacteria:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">low</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/public/assets/platform/icons/icon-magnifying.png" alt="Magnifying Glass" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="absolute inset-0 z-0 flex items-end">
+                 </div>
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Pollution:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">clean</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4 z-10">
+                <img src="/public/assets/platform/icons/icon-fish.png" alt="fish" class="w-3/5 h-auto object-contain scale-125" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Algae:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">safe</span>
+              </div>
+              
+              <div class="flex-1 flex items-center justify-center p-4 mt-2">
+                <img src="/public/assets/platform/icons/icon-seaweed.png" alt="Seaweed" class="max-w-[55%] max-h-full object-contain" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Clarity:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">clear</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4 z-10">
+                <img src="/public/assets/platform/icons/icon-sparkles.png" alt="Sparkles" class="w-3/5 h-auto object-contain scale-110" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Acidity:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">balanced</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/public/assets/platform/icons/icon-ph.png" alt="pH Scale" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+
+<footer class="w-full py-8 border-t-2 border-coast-brown bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center">
+      <p class="text-mono-label text-xs opacity-60 text-center">
+       BUILT WITH LOVE IN AALTO UNIVERSITY
+      </p>
+    </div>
+  </footer>

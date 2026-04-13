@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* Coastal Adventure Design System */
+@theme {
+  /* Core Colors */
+  --color-background: #FBEED8; /* Coast Beige */
+  --color-foreground: #432D26; /* Coast Brown */
+  
+  /* Brand Palette */
+  --color-coast-beige: #FBEED8;
+  --color-coast-brown: #432D26;
+  --color-coast-green: #B4B535;
+  --color-coast-yellow: #F1AF22;
+  --color-coast-magenta: #C84C71;
+  --color-coast-blue: #A0CAD5;
+  --color-coast-orange: #D9591E;
+
+  /* Typography */
+  --font-sans: "Rethink Sans", system-ui, sans-serif;
+  --font-heading: "Inknut Antiqua", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Specific UI Rules */
+  --border-width-thick: 1px;
+
+  /* Standard Spacing Scale (Kept from previous setup for consistency) */
+  --spacing-page-top: 8rem;
+  --spacing-page-bottom: 6rem;
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+  --spacing-content: 3rem;
+}
+/* Base Elements & Global Rules */
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased relative;
+  }
+
+  /* The Jittery Grain Animation */
+  @keyframes movingGrain {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -5%); }
+    20% { transform: translate(-10%, 5%); }
+    30% { transform: translate(5%, -10%); }
+    40% { transform: translate(-5%, 15%); }
+    50% { transform: translate(-10%, 5%); }
+    60% { transform: translate(15%, 0); }
+    70% { transform: translate(0, 10%); }
+    80% { transform: translate(-15%, 0); }
+    90% { transform: translate(10%, 5%); }
+    100% { transform: translate(5%, 0); }
+  }
+
+  /* The Moving Film Grain Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    /* Make the layer massive so edges don't show when it shifts */
+    top: -100%;
+    left: -100%;
+    width: 250%;
+    height: 250%;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url('/assets/film-grain.png');
+    background-repeat: repeat;
+    opacity: 0.08; /* Tweak this up or down based on your image's contrast */
+    mix-blend-mode: multiply;
+    /* steps(1) ensures it snaps instantly rather than gliding smoothly */
+    animation: movingGrain 0.6s steps(1) infinite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-foreground;
+  }
+
+  /* Universal 2px Coast Brown Border */
+  * {
+    border-color: var(--color-coast-brown);
+  }
+}
+
+/* UI Components */
+@layer components {
+  
+/* Base Button Logic */
+.btn {
+  @apply inline-flex items-center justify-center px-8 py-3 font-mono text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer;
+  border-radius: 0 !important; 
+  border: 2px solid var(--color-coast-brown);
+}
+  
+  /* The Hover Effect (Applied to all primary buttons) */
+  .btn-primary {
+    @apply bg-coast-beige text-coast-brown;
+  }
+  .btn-primary:hover {
+    @apply -translate-y-1 bg-coast-beige;
+    box-shadow: 4px 4px 0 var(--color-coast-brown);
+  }
+
+  /* Small variant for the Header buttons */
+  .btn-sm {
+    @apply px-4 py-2 text-xs;
+  }
+  
+ /* Typography Utilities */
+ .text-mono-label {
+  @apply font-mono uppercase tracking-wider text-coast-brown;
+}
+
+.text-hero {
+  @apply font-heading text-[72px] tracking-tighter leading-[1];
+}
+
+.text-section-header {
+  @apply font-heading text-[64px] tracking-tight leading-[1.2];
+}
+
+.text-body-large {
+  @apply font-sans text-[21px] tracking-tight leading-normal;
+}
+}
+
+/* Layout Utilities */
+@layer utilities {
+  .page-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  .page-padding {
+    @apply pt-32 pb-24;
+  }
+  .section-gap {
+    @apply mb-24;
+  }
+  .section-gap-sm {
+    @apply mb-16;
+  }
+}
+
+/* ---- BIRD ANIMATION ---- */
+@keyframes float { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-20px); } /* Increased float range by 30% */
+}
+.float-anim { 
+  animation: float 4s ease-in-out infinite; 
+}

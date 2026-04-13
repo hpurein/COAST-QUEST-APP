@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+import Header from '../components/header.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Coast Quest</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600&family=Rethink+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body class="overflow-x-hidden bg-coast-beige">
+    <Header />
+<!-- Title  -->
+
+  <section class="w-full pt-24 pb-12 bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-hero text-coast-brown mb-12">
+        The team behind <br/> the Coast Quest
+      </h1>
+      
+      <div class="w-full border-2 border-coast-brown mb-16 overflow-hidden">
+        <img src="/public/assets/team-photo.jpeg" alt="The Coast Quest Team" class="w-full h-auto object-cover" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO -->
+
+  <section class="w-full pb-24 bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+    
+        <!-- DESCRIPTION -->
+
+      <div>
+        <h2 class="font-heading text-3xl text-coast-brown mb-6 tracking-tight">We believe the coast belongs to everyone.</h2>
+        <p class="font-sans text-lg text-coast-brown leading-relaxed mb-6">
+            Coast Quest was born from a simple realization: understanding our local oceans shouldn't require a science degree. We are a team of designers, environmentalists, and ocean enthusiasts based in Finland. 
+        </p>
+        <p class="font-sans text-lg text-coast-brown leading-relaxed mb-8">
+            Our mission is to bridge the gap between complex marine data and everyday family life. By combining eco-friendly technology, interactive beach installations, and playful storytelling, we are helping the next generation explore, understand, and protect our shorelines.
+        </p>
+      </div>
+
+     <!-- MEMBER CARDS -->
+
+     <div class="flex flex-col gap-4">
+        
+        <div class="border-2 border-coast-brown bg-white p-6 flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+          <h3 class="font-heading text-2xl text-coast-brown tracking-tight mb-2">Molly Sherry</h3>
+          <span class="text-mono-label text-xs opacity-60 mb-1">Creative Content design, Video, Research, copywriting</span>
+        </div>
+
+        <div class="border-2 border-coast-brown bg-white p-6 flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+            <h3 class="font-heading text-2xl text-coast-brown tracking-tight mb-2">Florencia Yeh</h3>
+            <span class="text-mono-label text-xs opacity-60 mb-1">Illustrations, Graphic Design, Videography, Editing</span>
+          </div>
+
+          <div class="border-2 border-coast-brown bg-white p-6 flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+            <h3 class="font-heading text-2xl text-coast-brown tracking-tight mb-2">Roberts Zaumanis</h3>
+            <span class="text-mono-label text-xs opacity-60 mb-1">Prototyping, Communication & Strategy</span>
+          </div>
+
+          <div class="border-2 border-coast-brown bg-white p-6 flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+            <h3 class="font-heading text-2xl text-coast-brown tracking-tight mb-2">Kristaps Grieznis</h3>
+            <span class="text-mono-label text-xs opacity-60 mb-1">Branding, Full-stack Web Development & Strategy</span>
+          </div>
+
+          <div class="border-2 border-coast-brown bg-white p-6 flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
+            <h3 class="font-heading text-2xl text-coast-brown tracking-tight mb-2">Hiskias Heinonen</h3>
+            <span class="text-mono-label text-xs opacity-60 mb-1">Graphic Design, Research</span>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="w-full py-8 border-t-2 border-coast-brown bg-coast-beige">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center">
+      <p class="text-mono-label text-xs opacity-60 text-center">
+        BUILT WITH LOVE IN AALTO UNIVERSITY
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+
+  <script>
+
+  </script>
+
+</body>
+</html>
