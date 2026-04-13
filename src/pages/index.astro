@@ -16,33 +16,38 @@ import Header from '../components/header.astro';
 </head>
 <body class="overflow-x-hidden bg-coast-beige">
   <Header />
+  
  <!-- HERO SECTION -->
   <!-- 1. Swapped 'items-center' for 'items-start' so it anchors to the top -->
-  <section id="hero" class="relative min-h-screen flex items-start bg-coast-beige overflow-hidden">
+  <section id="hero" class="relative w-full min-h-[85vh] md:min-h-screen bg-coast-beige overflow-hidden flex items-center pt-32 pb-24 md:py-0">
     
-    <div class="absolute top-[70%] -left-[10%] w-[120%] h-[100%] bg-coast-blue -skew-y-3"></div>
+    <img 
+      src="/assets/trail-2.png" 
+      alt="" 
+      class="absolute bottom-[-20%] left-[-40%] w-[180%] max-w-none md:bottom-[5%] md:left-[-5%] md:w-[115%] h-auto pointer-events-none z-0 opacity-90" 
+    />
 
-    <!-- 2. Replaced the flat pt-24 with pt-12 md:pt-24. 
-         This gives 3rem of space on mobile, and exactly 6rem on desktop, completely killing the dead space! -->
-    <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10 pt-12 md:pt-42 pb-48">
-      <div>
+    <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+      
+      <div class="max-w-lg relative z-10 md:-translate-y-8">
         <h1 class="text-hero text-coast-brown mb-6">
           Coastline<br/>adventure<br/>trails
         </h1>
-        <p class="text-body-large text-coast-brown mb-8 max-w-lg leading-relaxed">
+        <p class="text-body-large text-coast-brown mb-12 leading-relaxed max-w-[420px]">
           We turn complicated water data into playful adventure trails, helping families explore their local shorelines safely and curiously.
         </p>
+        
         <a href="#why-we-exist" class="inline-flex flex-col items-start gap-1 no-underline text-coast-brown hover:text-coast-orange transition-colors">
           <span class="font-sans text-lg font-medium tracking-tight">Scroll down to learn how we work ↓</span>
         </a>
       </div>
       
-      <div class="flex justify-center items-center relative">
-        <img src="/assets/bird.png" alt="Bird" class="float-anim object-contain w-full max-w-lg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/transparent/432D26?text=Bird+Animation';" />
+      <div class="flex justify-center md:justify-end items-center relative z-10 md:-translate-y-12">
+        <img src="/assets/bird.png" alt="Bird" class="float-anim object-contain w-full max-w-[500px]" onerror="this.onerror=null; this.src='https://placehold.co/500x400/transparent/432D26?text=Bird';" />
       </div>
+
     </div>
   </section>
-
 
   <!-- WHY WE EXIST SECTION -->
 
@@ -73,15 +78,18 @@ import Header from '../components/header.astro';
         
         <div class="text-mono-label text-sm opacity-60 mt-4">OUR TRANSLATION:</div>
 
-        <!-- E-INK DISPLAY MOCKUP -->
-       
+      <!-- E-INK DISPLAY MOCKUP -->
+
         <div class="flex justify-center items-center">
           <img src="/assets/e-ink-graphic.png" alt="E-ink Display" class="w-full object-contain" />
         </div>
+  
       </div>
     </div>
   </section>
 
+
+  
   <!-- THE COAST QUEST EXPERIENCE SECTION -->
 
   <section id="the-coast-quest-experience" class="py-24 px-6 max-w-7xl mx-auto">
@@ -142,11 +150,14 @@ import Header from '../components/header.astro';
             A free live dashboard tool for parents. Check local beach germ levels, algae status, and water clarity right from your phone before you even pack the beach bag.
           </p>
         </div>
-      </div>
+      </div> 
 
     </div>
-  </section> <section id="water-vibe-dashboard" class="w-full py-24 bg-coast-beige"> 
-    <div class="max-w-7xl mx-auto px-6"> 
+
+<!-- VISITING THE BEACH-->
+
+  </section> <section id="water-vibe-dashboard" class="w-full py-24 bg-coast-yellow " style="clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);"> 
+    <div class="max-w-7xl py-24 mx-auto px-6"> 
       
       <div class="grid md:grid-cols-2 gap-12 items-start">
         
@@ -163,9 +174,70 @@ import Header from '../components/header.astro';
         </div>
 
         <div class="flex justify-center items-center">
-          <img src="/assets/dashboard.png" alt="Water Vibe E-ink Display" class="w-full h-auto object-contain"/>
-        </div>
+          <div class="w-full md:w-[80%] grid grid-cols-2 border-t-2 border-l-2 border-coast-brown">
+            
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Health:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">great</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/assets/platform/icons/icon-eyes.png" alt="Eyes" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
 
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Bacteria:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">low</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/assets/platform/icons/icon-magnifying.png" alt="Magnifying Glass" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Algae:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">safe</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center p-4 mt-2">
+                <img src="/assets/platform/icons/icon-seaweed.png" alt="Seaweed" class="max-w-[55%] max-h-full object-contain" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Pollution:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">clean</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4 z-10">
+                <img src="/assets/platform/icons/icon-fish.png" alt="fish" class="w-3/5 h-auto object-contain scale-125" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-beige p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-coast-brown tracking-tight leading-tight w-1/2">Clarity:</span>
+                <span class="bg-coast-green text-coast-beige px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">clear</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4 z-10">
+                <img src="/assets/platform/icons/icon-sparkles.png" alt="Sparkles" class="w-3/5 h-auto object-contain scale-110" />
+              </div>
+            </div>
+
+            <div class="border-b-2 border-r-2 border-coast-brown aspect-square bg-coast-green p-4 md:p-6 flex flex-col relative overflow-hidden">
+              <div class="flex justify-between items-start z-10">
+                <span class="font-sans text-sm md:text-lg text-white tracking-tight leading-tight w-1/2">Acidity:</span>
+                <span class="bg-white text-coast-brown px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-sans tracking-wide">balanced</span>
+              </div>
+              <div class="flex-1 flex items-center justify-center mt-4">
+                <img src="/assets/platform/icons/icon-ph.png" alt="pH Scale" class="w-2/3 h-auto object-contain" />
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -247,7 +319,9 @@ import Header from '../components/header.astro';
     </div>
   </section>
 
-  <section id="journal" class="w-full py-24 bg-coast-yellow" style="clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); margin: 2rem 0">
+
+  
+  <section id="journal" class="w-full py-24 bg-coast-yellow" style="clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center py-16">
       <div>
         <h2 class="text-section-header text-coast-brown mb-6">
