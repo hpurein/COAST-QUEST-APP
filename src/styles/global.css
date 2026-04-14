@@ -23,51 +23,18 @@
   /* Specific UI Rules */
   --border-width-thick: 1px;
 
-  /* Standard Spacing Scale (Kept from previous setup for consistency) */
+  /* Standard Spacing Scale */
   --spacing-page-top: 8rem;
   --spacing-page-bottom: 6rem;
   --spacing-section: 6rem;
   --spacing-section-sm: 4rem;
   --spacing-content: 3rem;
 }
+
 /* Base Elements & Global Rules */
 @layer base {
   body {
     @apply bg-background text-foreground font-sans antialiased relative;
-  }
-
-  /* The Jittery Grain Animation */
-  @keyframes movingGrain {
-    0% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -5%); }
-    20% { transform: translate(-10%, 5%); }
-    30% { transform: translate(5%, -10%); }
-    40% { transform: translate(-5%, 15%); }
-    50% { transform: translate(-10%, 5%); }
-    60% { transform: translate(15%, 0); }
-    70% { transform: translate(0, 10%); }
-    80% { transform: translate(-15%, 0); }
-    90% { transform: translate(10%, 5%); }
-    100% { transform: translate(5%, 0); }
-  }
-
-  /* The Moving Film Grain Overlay */
-  body::after {
-    content: "";
-    position: fixed;
-    /* Make the layer massive so edges don't show when it shifts */
-    top: -100%;
-    left: -100%;
-    width: 250%;
-    height: 250%;
-    z-index: 9999;
-    pointer-events: none;
-    background-image: url('/assets/film-grain.png');
-    background-repeat: repeat;
-    opacity: 0.08; /* Tweak this up or down based on your image's contrast */
-    mix-blend-mode: multiply;
-    /* steps(1) ensures it snaps instantly rather than gliding smoothly */
-    animation: movingGrain 0.6s steps(1) infinite;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -83,12 +50,12 @@
 /* UI Components */
 @layer components {
   
-/* Base Button Logic */
-.btn {
-  @apply inline-flex items-center justify-center px-8 py-3 font-mono text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer;
-  border-radius: 0 !important; 
-  border: 2px solid var(--color-coast-brown);
-}
+  /* Base Button Logic */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3 font-mono text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer;
+    border-radius: 0 !important; 
+    border: 2px solid var(--color-coast-brown);
+  }
   
   /* The Hover Effect (Applied to all primary buttons) */
   .btn-primary {
@@ -104,22 +71,22 @@
     @apply px-4 py-2 text-xs;
   }
   
- /* Typography Utilities */
- .text-mono-label {
-  @apply font-mono uppercase tracking-wider text-coast-brown;
-}
+  /* Typography Utilities */
+  .text-mono-label {
+    @apply font-mono uppercase tracking-wider text-coast-brown;
+  }
 
-.text-hero {
-  @apply font-heading text-[72px] tracking-tighter leading-[1];
-}
+  .text-hero {
+    @apply font-heading text-[72px] tracking-tighter leading-[1];
+  }
 
-.text-section-header {
-  @apply font-heading text-[64px] tracking-tight leading-[1.2];
-}
+  .text-section-header {
+    @apply font-heading text-[64px] tracking-tight leading-[1.2];
+  }
 
-.text-body-large {
-  @apply font-sans text-[21px] tracking-tight leading-normal;
-}
+  .text-body-large {
+    @apply font-sans text-[21px] tracking-tight leading-normal;
+  }
 }
 
 /* Layout Utilities */
@@ -141,7 +108,7 @@
 /* ---- BIRD ANIMATION ---- */
 @keyframes float { 
   0%, 100% { transform: translateY(0); } 
-  50% { transform: translateY(-20px); } /* Increased float range by 30% */
+  50% { transform: translateY(-20px); } 
 }
 .float-anim { 
   animation: float 4s ease-in-out infinite; 
