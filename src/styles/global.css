@@ -146,3 +146,16 @@
 .float-anim { 
   animation: float 4s ease-in-out infinite; 
 }
+
+/* Start the image completely clipped (hidden) from the right side */
+.trail-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: drawTrail linear forwards;
+}
+
+/* Animate to fully visible */
+@keyframes drawTrail {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

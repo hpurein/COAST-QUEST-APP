@@ -19,31 +19,32 @@ import Header from '../components/header.astro';
   
  <!-- HERO SECTION -->
   <!-- 1. Swapped 'items-center' for 'items-start' so it anchors to the top -->
-  <section id="hero" class="relative w-full min-h-[85vh] md:min-h-screen bg-coast-beige overflow-hidden flex items-center pt-32 pb-24 md:py-0">
+<section id="hero" class="relative w-full min-h-[85vh] md:min-h-screen bg-coast-beige overflow-hidden flex items-center pt-32 pb-32 md:py-0">
     
-    <img 
-      src="/assets/trail-2.png" 
-      alt="" 
-      class="absolute bottom-[-20%] left-[-40%] w-[180%] max-w-none md:bottom-[5%] md:left-[-5%] md:w-[115%] h-auto pointer-events-none z-0 opacity-90" 
-    />
+  <img 
+  id="hero-trail"
+  src="/assets/trail-new.png" 
+  alt="" 
+  class="trail-reveal absolute bottom-[5%] left-[-40%] w-[180%] max-w-none md:bottom-[15%] md:left-[-5%] md:w-[110%] h-auto pointer-events-none z-0 opacity-90" 
+/>
 
     <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
       
-      <div class="max-w-lg relative z-10 md:-translate-y-8">
+      <div class="max-w-lg relative z-10 md:-translate-y-25">
         <h1 class="text-hero text-coast-brown mb-6">
           Coastline<br/>adventure<br/>trails
         </h1>
         <p class="text-body-large text-coast-brown mb-12 leading-relaxed max-w-[420px]">
-          We turn complicated water data into playful adventure trails, helping families explore their local shorelines safely and curiously.
+          <strong> Coast Quest </strong> turns complicated water data into playful adventure trails, helping families explore their local shorelines safely.
         </p>
-        
-        <a href="#why-we-exist" class="inline-flex flex-col items-start gap-1 no-underline text-coast-brown hover:text-coast-orange transition-colors">
-          <span class="font-sans text-lg font-medium tracking-tight">Scroll down to learn how we work ↓</span>
-        </a>
+
+        <p class="text-body-large text-coast-brown mb-12 leading-relaxed max-w-[420px]">
+          Scroll down to learn how we work ↓
+        </p>
       </div>
       
-      <div class="flex justify-center md:justify-end items-center relative z-10 md:-translate-y-12">
-        <img src="/assets/bird.png" alt="Bird" class="float-anim object-contain w-full max-w-[500px]" onerror="this.onerror=null; this.src='https://placehold.co/500x400/transparent/432D26?text=Bird';" />
+      <div class="flex justify-center items-center relative z-10 mt-16 md:mt-0 md:-translate-y-30">
+        <img src="/assets/loc-icon.png" alt="Location Pin" class="float-anim object-contain w-full max-w-[160px]"/>
       </div>
 
     </div>
@@ -59,7 +60,10 @@ import Header from '../components/header.astro';
           There is a gap between data and families
         </h2>
         <p class="text-body-large text-coast-brown mb-4">
-          Water quality reports are currently way too complicated. The data is hidden in complex government websites and written in scientific jargon that most people can't understand. Coast Quest translates that data into one simple message: <strong>is it a good day to swim or not?</strong>
+          Water quality reports are currently way too complicated. The data is hidden in complex government websites and written in scientific jargon that most people can't understand.
+        </p>
+        <p class="text-body-large text-coast-brown mb-8">
+          Coast Quest translates that data into one simple message: <strong> is it a good day to swim or not? </strong> 
         </p>
       </div>
       
@@ -76,12 +80,13 @@ import Header from '../components/header.astro';
           Exceeds bathing water directive 2006/7/EC
         </div>
         
+
+      <!-- OUR TRANSLATION-->
+
         <div class="text-mono-label text-sm opacity-60 mt-4">OUR TRANSLATION:</div>
 
-      <!-- E-INK DISPLAY MOCKUP -->
-
-        <div class="flex justify-center items-center">
-          <img src="/assets/e-ink-graphic.png" alt="E-ink Display" class="w-full object-contain" />
+        <div class="flex justify-center items-center border-2 border-coast-brown">
+          <img src="/assets/our-translation.png" alt="E-ink Display" class="w-full object-contain" />
         </div>
   
       </div>
@@ -366,7 +371,7 @@ import Header from '../components/header.astro';
       <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-coast-beige tracking-tight leading-tight mb-6">
         Coast Quest is coming to a shore near you.
       </h2>
-      <p class="text-body-large text-coast-blue mb-12">
+      <p class="text-mono-label text-coast-beige mb-10 text-xs opacity-60 text-center">
         We're currently developing in Helsinki. Sign up to be notified when we launch.
       </p>
       <div class="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto mb-6" id="waitlist-form">
@@ -396,8 +401,23 @@ import Header from '../components/header.astro';
   </footer>
 
   <script>
+    // 1. The Trail Animation Script
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      const trail = document.getElementById('hero-trail');
+      
+      if (trail) {
+        setTimeout(() => {
+          const trailWidth = trail.getBoundingClientRect().width;
+          const pixelsPerSecond = 360;
+          const totalSeconds = trailWidth / pixelsPerSecond;
+          trail.style.animationDuration = `${totalSeconds}s`;
+        }, 100); 
+      }
 
-    // Waitlist Form UI: Basic validation and success message display
+    }); // <-- THIS WAS MISSING! It closes the DOMContentLoaded listener.
+
+    // 2. The Waitlist Form UI Script (Kept outside so the button can click it)
     function handleWaitlist() {
       const email = document.getElementById('email-input').value;
       if (!email || !email.includes('@')) {
