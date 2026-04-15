@@ -25,17 +25,17 @@ import Header from '../components/header.astro';
   id="hero-trail"
   src="/assets/trail-new.png" 
   alt="" 
-  class="trail-reveal absolute bottom-[5%] left-[-40%] w-[180%] max-w-none md:bottom-[15%] md:left-[-5%] md:w-[110%] h-auto pointer-events-none z-0 opacity-90" 
+  class="trail-reveal absolute bottom-[5%] left-[-40%] w-[180%] max-w-none md:bottom-[0%] md:left-[-5%] md:w-[110%] h-auto pointer-events-none z-0 opacity-90" 
 />
 
     <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
       
       <div class="max-w-lg relative z-10 md:-translate-y-25">
         <h1 class="text-hero text-coast-brown mb-6">
-          Coastline<br/>adventure<br/>trails
+          Coastal knowledge <br/> made easy
         </h1>
         <p class="text-body-large text-coast-brown mb-12 leading-relaxed max-w-[420px]">
-          <strong> Coast Quest </strong> turns complicated water data into playful adventure trails, helping families explore their local shorelines safely.
+          <strong> Coast Quest </strong> is a free public service that provides all the information beachgoers need about their local coastal environments.
         </p>
 
         <p class="text-body-large text-coast-brown mb-12 leading-relaxed max-w-[420px]">
@@ -48,6 +48,37 @@ import Header from '../components/header.astro';
       </div>
 
     </div>
+  </section>
+
+<!-- MOVIE -->
+
+  <section id="the-story" class="py-24 px-6 max-w-7xl mx-auto">
+    
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <h2 class="text-section-header text-coast-brown m-0 mb-8 leading-none">
+          See the coast <br class="hidden md:block" /> in action
+        </h2>
+        <p class="text-body-large text-coast-brown max-w-md md:text-left opacity-90">
+          Follow Moll as she explores the smart coast, meets the mascots, and discovers how Coast Quest works in the wild.
+        </p>
+      </div>
+    </div>
+
+    <div class="relative w-full aspect-video border-2 border-coast-brown bg-coast-brown shadow-[8px_8px_0_#432D26] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[12px_12px_0_#432D26]">
+      
+      <iframe 
+        class="w-full h-full absolute inset-0"
+        src="https://www.youtube.com/embed/BZck3Q3hnus?rel=0&modestbranding=1" 
+        title="Coast Quest: This is Moll" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      
+    </div>
+    
   </section>
 
   <!-- WHY WE EXIST SECTION -->
@@ -86,7 +117,7 @@ import Header from '../components/header.astro';
         <div class="text-mono-label text-sm opacity-60 mt-4">OUR TRANSLATION:</div>
 
         <div class="flex justify-center items-center border-2 border-coast-brown">
-          <img src="/assets/our-translation.png" alt="E-ink Display" class="w-full object-contain" />
+          <img src="/assets/our-translation-2.png" alt="E-ink Display" class="w-full object-contain" />
         </div>
   
       </div>
@@ -110,8 +141,8 @@ import Header from '../components/header.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
-        <div class="h-48 bg-coast-blue">
-          <img src="/assets/clear-data-photo.png" alt="Clear data screens" class="w-full h-full object-cover" />
+        <div class="aspect-[4/3] bg-coast-blue">
+          <img src="/assets/clear-data-photo-2.png" alt="Clear data screens" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1">
           <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Clear data on eco-friendly screens.</h3>
@@ -122,8 +153,8 @@ import Header from '../components/header.astro';
       </div>
       
       <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
-        <div class="h-48 bg-coast-green">
-          <img src="/assets/hands-on-stations.png" alt="Hands-on learning" class="w-full h-full object-cover" />
+        <div class="aspect-[4/3] bg-coast-green">
+          <img src="/assets/hands-on-stations-2.jpg" alt="Hands-on learning" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1">
           <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Hands-on learning stations.</h3>
@@ -134,7 +165,7 @@ import Header from '../components/header.astro';
       </div>
       
       <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
-        <div class="h-48 bg-coast-yellow">
+        <div class="aspect-[4/3] bg-coast-yellow">
           <img src="/assets/spread.png" alt="Explorer's Journal" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1">
@@ -146,8 +177,8 @@ import Header from '../components/header.astro';
       </div>
       
       <div class="border-2 border-coast-brown bg-coast-beige flex flex-col transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#432D26]">
-        <div class="h-48 bg-coast-magenta">
-          <img src="/assets/water-vibe.png" alt="Water Vibe Platform" class="w-full h-full object-cover" />
+        <div class="aspect-[4/3] bg-coast-magenta">
+          <img src="/assets/device-mockups.png" alt="Water Vibe Platform" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1">
           <h3 class="font-heading text-xl text-coast-brown mb-3 tracking-tight leading-tight">Water Vibe Platform</h3>
@@ -357,7 +388,7 @@ import Header from '../components/header.astro';
         </a>
       </div>
       <div class="flex items-center justify-center">
-        <div class="w-72 h-96 border-2 border-coast-brown bg-white shadow-[8px_8px_0_#432D26] flex items-center justify-center -rotate-2">
+        <div class="w-72 h-96 border-2 border-coast-brown bg-coast-yellow shadow-[8px_8px_0_#432D26] flex items-center justify-center -rotate-2">
             <img src="/assets/journal.png" alt="Explorer Journal" class="w-full h-full object-cover" />        
         </div>
       </div>
@@ -366,25 +397,14 @@ import Header from '../components/header.astro';
 
 <!-- WAITLIST -->
 
-  <section id="waitlist" class="w-full py-24 bg-coast-brown">
+  <section  id="waitlist" class="w-full py-8 bg-coast-beige border-t-2 border-coast-brown">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-coast-beige tracking-tight leading-tight mb-6">
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-coast-brown tracking-tight leading-tight mb-6">
         Coast Quest is coming to a shore near you.
       </h2>
-      <p class="text-mono-label text-coast-beige mb-8 text-xs opacity-60 text-center">
+      <p class="text-mono-label text-coast-brown mb-8 text-xs opacity-60 text-center">
         We're currently developing in Helsinki. Sign up to be notified when we launch.
       </p>
-      <div class="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto mb-6" id="waitlist-form">
-        <input type="email" id="email-input" placeholder="ilovebeaches@email.com" class="flex-1 bg-[#2d1f1a] border-2 border-coast-beige text-coast-beige px-4 py-3 font-sans outline-none focus:border-coast-orange"/>
-        <button onclick="handleWaitlist()" class="btn btn-primary border-coast-beige">
-          Join the Waitlist
-        </button>
-      </div>
-      <div id="waitlist-success" class="hidden">
-        <div class="border-2 border-coast-green p-6 text-center">
-          <div class="font-heading text-3xl text-coast-green mb-2 tracking-tight">You're on the list! 🌊</div>
-          <p class="font-sans text-coast-blue">We'll be in touch when Coast Quest comes to your coast. Thank you for joining the quest.</p>
-        </div>
       </div>
     </div>
   </section>
